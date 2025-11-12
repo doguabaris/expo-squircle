@@ -88,18 +88,3 @@ export function normalizeSmoothFactor(value: number | undefined) {
 export function clamp(value: number, min: number, max: number) {
   return Math.min(max, Math.max(min, value));
 }
-
-/**
- * Shrinks a radius by a stroke inset while preventing negative outputs.
- *
- * @param radius Original radius to shrink.
- * @param insetAmount Amount to subtract.
- * @returns number | undefined Reduced radius or undefined if the original value was undefined.
- */
-export function shrinkRadius(radius: number | undefined, insetAmount: number) {
-  if (typeof radius === 'number') {
-    return Math.max(0, radius - insetAmount);
-  }
-
-  return radius;
-}
