@@ -1,0 +1,16 @@
+# Git metadata
+.git
+
+# Node installs & logs
+node_modules
+npm-debug.log*
+yarn-error.log*
+yarn-debug.log*
+
+# Build outputs
+build
+example/build
+
+# Editor cruft
+.DS_Store
+.idea
