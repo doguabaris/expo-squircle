@@ -16,9 +16,9 @@
  * @author Doğu Abaris <abaris@null.net>
  */
 
-import type { ColorValue } from "react-native";
+import type { ColorValue } from 'react-native';
 
-import type { SquircleComponentProps } from "../ExpoSquircle.types";
+import type { SquircleComponentProps } from '../ExpoSquircle.types';
 
 /**
  * Sanitized squircle options consumed by the view layer.
@@ -35,7 +35,7 @@ export type NormalizedRoundedSurfaceOptions = {
   borderWidth: number;
 };
 
-export type CornerId = "topLeft" | "topRight" | "bottomLeft" | "bottomRight";
+export type CornerId = 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';
 
 /**
  * Describes the radius and smoothing budget assigned to a single corner.
@@ -91,7 +91,7 @@ export type SquirclePathInput = {
   preserveSmoothing?: boolean;
 };
 
-export type SquircleParamsProp = SquircleComponentProps["squircleParams"];
+export type SquircleParamsProp = SquircleComponentProps['squircleParams'];
 
 /**
  * Convenience shape describing the corner radii spread across each edge.

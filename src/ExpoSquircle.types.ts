@@ -10,8 +10,8 @@
  * @license MIT. Copyright (c) Doğu Abaris.
  */
 
-import type { PropsWithChildren } from "react";
-import type { ColorValue, ViewProps } from "react-native";
+import type { PropsWithChildren } from 'react';
+import type { ColorValue, ViewProps } from 'react-native';
 
 export interface RoundedSurfaceOptions {
   baseRadius?: number;

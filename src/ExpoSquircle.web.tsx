@@ -1,1 +1,1 @@
-export { default } from "./ExpoSquircle";
+export { default } from './ExpoSquircle';

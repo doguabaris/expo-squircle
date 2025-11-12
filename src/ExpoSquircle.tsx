@@ -9,14 +9,14 @@
  * @author Doğu Abaris <abaris@null.net>
  */
 
-import React, { useCallback, useMemo, useState } from "react";
-import { LayoutChangeEvent, StyleSheet, View } from "react-native";
-import Svg, { Path } from "react-native-svg";
+import React, { useCallback, useMemo, useState } from 'react';
+import { LayoutChangeEvent, StyleSheet, View } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
 
-import type { SquircleComponentProps } from "./ExpoSquircle.types";
-import { normalizeSquircleParams, shrinkRadius } from "./core/params";
-import { buildSquirclePath } from "./core/squircleMath";
-import type { NormalizedRoundedSurfaceOptions } from "./core/types";
+import type { SquircleComponentProps } from './ExpoSquircle.types';
+import { normalizeSquircleParams, shrinkRadius } from './core/params';
+import { buildSquirclePath } from './core/squircleMath';
+import type { NormalizedRoundedSurfaceOptions } from './core/types';
 
 type MeasuredFrame = { width: number; height: number };
 
@@ -131,7 +131,7 @@ const SquircleBackdrop: React.FC<SquircleBackdropProps> = ({
       bottomLeftRadius,
       bottomRightRadius,
     ].filter(
-      (value): value is number => typeof value === "number" && value > 0,
+      (value): value is number => typeof value === 'number' && value > 0,
     );
 
     const maxStrokeWidth =
@@ -177,15 +177,15 @@ const SquircleBackdrop: React.FC<SquircleBackdropProps> = ({
   ]);
 
   if (!path) {
-    return <View pointerEvents="none" style={StyleSheet.absoluteFill} />;
+    return <View pointerEvents='none' style={StyleSheet.absoluteFill} />;
   }
 
   if (renderedStrokeWidth === 0) {
     return (
-      <View pointerEvents="none" style={StyleSheet.absoluteFill}>
+      <View pointerEvents='none' style={StyleSheet.absoluteFill}>
         <Svg
-          width="100%"
-          height="100%"
+          width='100%'
+          height='100%'
           viewBox={`0 0 ${layoutWidth} ${layoutHeight}`}
         >
           <Path d={path} fill={surfaceColor} />
@@ -195,10 +195,10 @@ const SquircleBackdrop: React.FC<SquircleBackdropProps> = ({
   }
 
   return (
-    <View pointerEvents="none" style={StyleSheet.absoluteFill}>
+    <View pointerEvents='none' style={StyleSheet.absoluteFill}>
       <Svg
-        width="100%"
-        height="100%"
+        width='100%'
+        height='100%'
         viewBox={`0 0 ${layoutWidth} ${layoutHeight}`}
       >
         <Path

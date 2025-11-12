@@ -15,7 +15,7 @@
 import type {
   NormalizedRoundedSurfaceOptions,
   SquircleParamsProp,
-} from "./types";
+} from './types';
 
 const SQUIRCLE_PARAM_ERROR =
   'ExpoSquircle: The "squircleParams" prop is required to draw the background.';
@@ -41,7 +41,7 @@ export function normalizeSquircleParams(
    * Ensures radii are positive numbers or returns undefined when user input is invalid.
    */
   const sanitizeRadius = (value?: number) => {
-    if (typeof value !== "number" || Number.isNaN(value)) {
+    if (typeof value !== 'number' || Number.isNaN(value)) {
       return undefined;
     }
     return Math.max(0, value);
@@ -57,8 +57,8 @@ export function normalizeSquircleParams(
     bottomRightRadius: sanitizeRadius(params.bottomRightRadius),
     bottomLeftRadius: sanitizeRadius(params.bottomLeftRadius),
     smoothFactor: normalizeSmoothFactor(params.smoothFactor),
-    surfaceColor: params.surfaceColor ?? "#000",
-    borderColor: params.borderColor ?? "#000",
+    surfaceColor: params.surfaceColor ?? '#000',
+    borderColor: params.borderColor ?? '#000',
     borderWidth,
   };
 }
@@ -71,7 +71,7 @@ export function normalizeSquircleParams(
  * @throws Error when the input is not a finite number.
  */
 export function normalizeSmoothFactor(value: number | undefined) {
-  if (typeof value !== "number" || !Number.isFinite(value)) {
+  if (typeof value !== 'number' || !Number.isFinite(value)) {
     throw new Error(INVALID_SMOOTH_FACTOR_ERROR);
   }
   return clamp(value, 0, 1);
@@ -97,7 +97,7 @@ export function clamp(value: number, min: number, max: number) {
  * @returns number | undefined Reduced radius or undefined if the original value was undefined.
  */
 export function shrinkRadius(radius: number | undefined, insetAmount: number) {
-  if (typeof radius === "number") {
+  if (typeof radius === 'number') {
     return Math.max(0, radius - insetAmount);
   }
 

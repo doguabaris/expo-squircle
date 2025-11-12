@@ -5,6 +5,6 @@
  * @license MIT. Copyright (c) Doğu Abaris.
  */
 
-export { default } from "./ExpoSquircle";
-export { default as ExpoSquircle } from "./ExpoSquircle";
-export * from "./ExpoSquircle.types";
+export { default } from './ExpoSquircle';
+export { default as ExpoSquircle } from './ExpoSquircle';
+export * from './ExpoSquircle.types';

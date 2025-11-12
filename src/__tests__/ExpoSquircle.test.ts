@@ -5,13 +5,13 @@
  * @author Doğu Abaris <abaris@null.net>
  */
 
-import { describe, expect, it } from "@jest/globals";
+import { describe, expect, it } from '@jest/globals';
 
-import { normalizeSmoothFactor } from "../core/params";
-import { buildSquirclePath } from "../core/squircleMath";
+import { normalizeSmoothFactor } from '../core/params';
+import { buildSquirclePath } from '../core/squircleMath';
 
-describe("buildSquirclePath", () => {
-  it("does not emit NaN values when only one corner radius is provided", () => {
+describe('buildSquirclePath', () => {
+  it('does not emit NaN values when only one corner radius is provided', () => {
     const path = buildSquirclePath({
       width: 100,
       height: 100,
@@ -25,17 +25,17 @@ describe("buildSquirclePath", () => {
     });
 
     expect(path).toBeTruthy();
-    expect(path).not.toContain("NaN");
+    expect(path).not.toContain('NaN');
   });
 });
 
-describe("normalizeSmoothFactor", () => {
-  it("clamps out-of-range values", () => {
+describe('normalizeSmoothFactor', () => {
+  it('clamps out-of-range values', () => {
     expect(normalizeSmoothFactor(2)).toBe(1);
     expect(normalizeSmoothFactor(-0.2)).toBe(0);
   });
 
-  it("throws when the value is missing", () => {
+  it('throws when the value is missing', () => {
     expect(() => normalizeSmoothFactor(undefined)).toThrow(/smoothFactor/i);
   });
 });

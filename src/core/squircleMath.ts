@@ -16,7 +16,7 @@ import type {
   CornerProfiles,
   CornerSpreadInput,
   SquirclePathInput,
-} from "./types";
+} from './types';
 
 const PATH_CACHE_LIMIT = 160;
 const PATH_CACHE_MAP = new Map<string, string>();
@@ -168,13 +168,13 @@ function composeCacheKey(data: {
     data.width.toFixed(2),
     data.height.toFixed(2),
     data.cornerSmoothing.toFixed(4),
-    data.preserveSmoothing ? "1" : "0",
+    data.preserveSmoothing ? '1' : '0',
     data.cornerRadius.toFixed(2),
     data.topLeftCornerRadius.toFixed(2),
     data.topRightCornerRadius.toFixed(2),
     data.bottomRightCornerRadius.toFixed(2),
     data.bottomLeftCornerRadius.toFixed(2),
-  ].join("|");
+  ].join('|');
 }
 
 /**
@@ -204,27 +204,27 @@ function storeCachedPath(key: string, value: string) {
   PATH_CACHE_MAP.set(key, value);
 }
 
-type EdgeOrientation = "top" | "bottom" | "left" | "right";
+type EdgeOrientation = 'top' | 'bottom' | 'left' | 'right';
 
 const ADJACENT_RELATIONS: Record<
   CornerId,
   { side: EdgeOrientation; corner: CornerId }[]
 > = {
   topLeft: [
-    { corner: "topRight", side: "top" },
-    { corner: "bottomLeft", side: "left" },
+    { corner: 'topRight', side: 'top' },
+    { corner: 'bottomLeft', side: 'left' },
   ],
   topRight: [
-    { corner: "topLeft", side: "top" },
-    { corner: "bottomRight", side: "right" },
+    { corner: 'topLeft', side: 'top' },
+    { corner: 'bottomRight', side: 'right' },
   ],
   bottomLeft: [
-    { corner: "bottomRight", side: "bottom" },
-    { corner: "topLeft", side: "left" },
+    { corner: 'bottomRight', side: 'bottom' },
+    { corner: 'topLeft', side: 'left' },
   ],
   bottomRight: [
-    { corner: "bottomLeft", side: "bottom" },
-    { corner: "topRight", side: "right" },
+    { corner: 'bottomLeft', side: 'bottom' },
+    { corner: 'topRight', side: 'right' },
   ],
 };
 
@@ -277,7 +277,7 @@ function normalizeCorners({
 
           const adjacentBudget = budgetMap[adjacentCorner];
           const sideLength =
-            side === "top" || side === "bottom" ? width : height;
+            side === 'top' || side === 'bottom' ? width : height;
 
           if (adjacentBudget >= 0) {
             return sideLength - adjacentBudget;
@@ -416,9 +416,9 @@ function cornerProfileCacheKey({
   return [
     cornerRadius.toFixed(3),
     cornerSmoothing.toFixed(4),
-    preserveSmoothing ? "1" : "0",
+    preserveSmoothing ? '1' : '0',
     roundingAndSmoothingBudget.toFixed(3),
-  ].join("|");
+  ].join('|');
 }
 
 type PathParamsInput = {
@@ -459,10 +459,10 @@ function joinCornerProfiles({
     traceBottomLeft(bottomLeftPathParams),
     `L 0 ${topLeftPathParams.p}`,
     traceTopLeft(topLeftPathParams),
-    "Z",
+    'Z',
   ];
 
-  return segments.join(" ");
+  return segments.join(' ');
 }
 
 /**
@@ -607,5 +607,5 @@ function formatSegment(strings: TemplateStringsArray, ...values: number[]) {
       return acc + str + value.toFixed(4);
     }
     return acc + str;
-  }, "");
+  }, '');
 }
