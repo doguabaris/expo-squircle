@@ -47,7 +47,7 @@
 	},
 	"devDependencies": {
 		"@types/react": "~19.1.0",
-		"expo": "^54.0.18",
+		"expo": "^56.0.9",
 		"expo-module-scripts": "^5.0.7",
 		"react-native": "0.81.5",
 		"react-native-svg": "15.11.2"
